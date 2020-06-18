@@ -6,7 +6,7 @@ $(document).ready(function() {
     if ($('#option-template').length) {
         var template_option = Handlebars.compile($('#option-template').html());
         $.ajax({
-            url: '../database/dischi-ajax.php',
+            url: '../database/dischi.php?author=',
             method: 'GET',
             success:
                 function(data) {
@@ -24,14 +24,12 @@ $(document).ready(function() {
         var value = $(this).val();
         $('.cds-container').html('');
         $.ajax({
-            url: '../database/dischi-ajax.php',
+            url: '../database/dischi.php?author=' + value,
             method: 'GET',
             success:
                 function(data) {
                     for (var i = 0; i < data.length; i++) {
-                        if (data[i].author.includes(value)) {
-                            $('.cds-container').append(template_cd(data[i]));
-                        }
+                        $('.cds-container').append(template_cd(data[i]));
                     }
                 },
             error: function() {
