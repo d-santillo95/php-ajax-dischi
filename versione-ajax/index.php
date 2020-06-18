@@ -6,6 +6,23 @@
         <link rel="stylesheet" href="../public/app.css">
     </head>
     <body>
-
+        <header>
+            <div class="container">
+                <img src="../public/logo.png" alt="logo" />
+                <select id="artist-select" name="">
+                    <option value="All">All</option>
+                </select>
+            </div>
+        </header>
+        <div class="cds-container container">
+        </div>
     </body>
+    <script id="cd-template" type="text/x-handlebars-template">
+        <div class="cd active" data-genre={{genre}}>
+            <img src={{poster}} alt={{title}}>
+            <h3>{{title}}</h3>
+            <span class="author">{{author}}</span>
+            <span class="year">{{year}}</span>
+        </div>
+    </script>
 </html>
