@@ -9,8 +9,8 @@
         <header>
             <div class="container">
                 <img src="../public/logo.png" alt="logo" />
-                <select id="artist-select" name="">
-                    <option value="All">All</option>
+                <select id="author-select" name="">
+                    <option value="">All</option>
                 </select>
             </div>
         </header>
@@ -18,11 +18,15 @@
         </div>
     </body>
     <script id="cd-template" type="text/x-handlebars-template">
-        <div class="cd active" data-genre={{genre}}>
+        <div class="cd active" data-genre={{genre}} data-author="{{author}}">
             <img src={{poster}} alt={{title}}>
             <h3>{{title}}</h3>
             <span class="author">{{author}}</span>
             <span class="year">{{year}}</span>
         </div>
     </script>
+    <script id="option-template" type="text/x-handlebars-template">
+        <option value="{{author}}">{{author}}</option>
+    </script>
+    <script src="../public/app.js" charset="utf-8"></script>
 </html>
