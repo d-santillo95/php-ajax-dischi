@@ -89,7 +89,11 @@ function select($value, $datas) {
 
 if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
     header('Content-Type: application/json');
-    echo json_encode(select($_GET["author"], $dischi));
+    if (!count($_GET)) {
+        echo json_encode($dischi);
+    } else {
+        echo json_encode(select($_GET["author"], $dischi));
+    }
 }
 
 ?>

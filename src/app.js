@@ -6,7 +6,7 @@ $(document).ready(function() {
     if ($('#option-template').length) {
         var template_option = Handlebars.compile($('#option-template').html());
         $.ajax({
-            url: '../database/dischi.php?author=',
+            url: '../database/dischi.php',
             method: 'GET',
             success:
                 function(data) {
